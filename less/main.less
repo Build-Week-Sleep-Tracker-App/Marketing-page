@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+    outline-color: @red;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+b {
+    font-weight: 900;
+}
+
+.container {
+    width: 1000px;
+	margin: 0 auto;
+	padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+
+    section {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        flex-wrap: wrap;
+
+        margin-bottom: 150px;
+    }
+
+    .navigation {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        font-size: 1.5rem;
+        font-weight: 800;
+        padding: 30px 0;
+
+        .logo-wrapper {
+            width: 10%;
+
+            img {
+                height: 70px;
+            }
+        }
+
+        nav {
+            width: 80%;
+
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            a {
+                margin: 10px 20px;
+                color: @gray;
+                text-decoration: none;
+            }
+        }
+
+        .download {
+            background-color: @red;
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+        }
+    }
+
+    .content-100 {
+        width: 100%;
+    }
+
+    .content-50 {
+        width: 50%;
+    }
+
+    .content-33 {
+        width: calc(100% / 3);
+    }
+
+    .content-66 {
+        width: calc(calc(100% / 3)*2);
+
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.footer {
+    background-color: @gray;
+    padding: 50px;
+
+    #footer-logo {
+        height: 70px;
+        margin-bottom: 50px;
+    }
+
+    .store {
+        width: 150px;
+        margin: 15px 0;
+        border-radius: 10px;
+        display: block;
+    }
+
+    h3 {
+        text-transform: uppercase;
+        color: white;
+        padding-bottom: 20px;
+        font-size: 2rem;
+        font-weight: 900;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+        display: block;
+        padding: 8px 0;
+        font-size: 1.5rem;
+        font-weight: 300;
+    }
+
+    .content-66 {
+        justify-content: space-between;
+    }
+
+    section {
+        margin: 0;
+    }
+
+    #back {
+        z-index: 1;
+        position: relative;
+        width: 50%;
+		margin-top: -80%;
+		margin-left: 50%;
+    }
+
+    #footer-logo, .store {
+		z-index: 3;
+		position: relative;
+	}
+}
