@@ -30,7 +30,7 @@ const isInViewport = (elem) => {
 };
 
 const loopImages = () => {
-	[...document.getElementsByTagName("img")].forEach(function name(ele) {
+	[...document.getElementsByTagName("img")].forEach((ele) => {
 		if (isInViewport(ele)) {
 			ele.classList.add("animate")
 		}
