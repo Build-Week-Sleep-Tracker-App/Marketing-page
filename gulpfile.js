@@ -3,7 +3,7 @@ var gulp = require('gulp');
 const htmlmin = require('gulp-htmlmin');
 var runSequence = require('run-sequence');
 var clean = require('gulp-clean');
-var folder = './www/';
+var folder = './';
 
 var codes = [];
 
@@ -33,12 +33,12 @@ gulp.task('clean', function () {
 });
 
 gulp.task('copyall', function () {
-	return gulp.src([folder + '**/*', folder + '*', folder + '.*'])
+	return gulp.src([folder + '**/*', folder + '*', folder + '.*', "!"+folder + "node_modules/**/*", "!"+folder + "node_modules/", "!"+folder + "dist/**/*" ])
 		.pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('minify-html', () => {
-	return gulp.src(folder + '**/*.html')
+	return gulp.src([folder + '**/*.html', "!"+folder + "node_modules/**/*"])
 	.pipe(htmlmin({
 		collapseWhitespace: true,
 		removeComments: true,
