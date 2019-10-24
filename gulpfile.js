@@ -33,12 +33,12 @@ gulp.task('clean', function () {
 });
 
 gulp.task('copyall', function () {
-	return gulp.src([folder + '**/*', folder + '*', folder + '.*', "!"+folder + "node_modules/**/*", "!"+folder + "node_modules/", "!"+folder + "dist/**/*" ])
+	return gulp.src([folder + '**/*', '!**/node_modules/**', '!**/node_modules', '!**dist/**', '!**dist'])
 		.pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('minify-html', () => {
-	return gulp.src([folder + '**/*.html', "!"+folder + "node_modules/**/*"])
+	return gulp.src([folder + '**/*.html', '!**/node_modules/**', '!**/node_modules', '!**dist/**', '!**dist'])
 	.pipe(htmlmin({
 		collapseWhitespace: true,
 		removeComments: true,
@@ -49,13 +49,13 @@ gulp.task('minify-html', () => {
 });
 
 gulp.task('minify-css', function () {
-	return gulp.src(folder + '**/*.css')
+	return gulp.src([folder + '**/*.css', '!**/node_modules/**', '!**/node_modules', '!**dist/**', '!**dist'])
 		.pipe(cleanCSS())
 		.pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('minify-js', function () {
-	return gulp.src(folder + 'js/**/*.js')
+	return gulp.src([folder + '**/*.js', '!**/node_modules/**', '!**/node_modules', '!**dist/**', '!**dist'])
 		.pipe(terser({
 			ecma: 6,
 			mangle: {
