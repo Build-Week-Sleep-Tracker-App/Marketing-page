@@ -354,8 +354,8 @@ p {
 }
 .container .navigation nav.open {
   display: flex;
-  align-items: stretch;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
 }
 .container .navigation .download {
   background-color: #f85565;
