@@ -3,6 +3,7 @@ const gulp = require('gulp');
 const htmlmin = require('gulp-htmlmin');
 const runSequence = require('run-sequence');
 const cleanCSS = require('gulp-clean-css');
+const terser = require('gulp-terser');
 const clean = require('gulp-clean');
 const folder = './';
 
@@ -21,7 +22,7 @@ gulp.task('maintask', function(callback) {
 	return runSequence(
 		'clean',
 		'copyall',
-		['minify-html', 'minify-css'],
+		['minify-html', 'minify-css', 'minify-js'],
 		callback);
 });
 
@@ -51,4 +52,15 @@ gulp.task('minify-css', function () {
 	return gulp.src(folder + '**/*.css')
 		.pipe(cleanCSS())
 		.pipe(gulp.dest('./dist/'));
+});
+
+gulp.task('minify-js', function () {
+	return gulp.src(folder + 'js/**/*.js')
+		.pipe(terser({
+			ecma: 6,
+			mangle: {
+				toplevel: true,
+			}
+		}))
+		.pipe(gulp.dest('./dist/js/'));
 });
