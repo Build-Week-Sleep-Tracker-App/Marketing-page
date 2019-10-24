@@ -1,11 +1,10 @@
 // including plugins
-var gulp = require('gulp');
+const gulp = require('gulp');
 const htmlmin = require('gulp-htmlmin');
-var runSequence = require('run-sequence');
-var clean = require('gulp-clean');
-var folder = './';
-
-var codes = [];
+const runSequence = require('run-sequence');
+const cleanCSS = require('gulp-clean-css');
+const clean = require('gulp-clean');
+const folder = './';
 
 // npm init
 // npm install gulp browser-sync gulp-minify-html gulp-minify-css gulp-uglify run-sequence gulp-clean gulp-inject-partials gulp-sitemap gulp-imagemin --save
@@ -22,7 +21,7 @@ gulp.task('maintask', function(callback) {
 	return runSequence(
 		'clean',
 		'copyall',
-		['minify-html'],
+		['minify-html', 'minify-css'],
 		callback);
 });
 
@@ -46,4 +45,10 @@ gulp.task('minify-html', () => {
 		minifyJS: true
 	}))
 	.pipe(gulp.dest('./dist/'));
+});
+
+gulp.task('minify-css', function () {
+	return gulp.src(folder + '**/*.css')
+		.pipe(cleanCSS())
+		.pipe(gulp.dest('./dist/'));
 });
