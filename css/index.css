@@ -126,19 +126,18 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-@media only screen and (max-width: 992px) {
-}
 .animate {
   -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp;
   animation-duration: 2s;
   animation-fill-mode: forwards;
+  /* keep last state */
 }
 img {
   opacity: 0;
 }
 @-webkit-keyframes fadeInUp {
-  0% {
+  from {
     opacity: 0;
     -webkit-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);
@@ -150,7 +149,7 @@ img {
   }
 }
 @keyframes fadeInUp {
-  0% {
+  from {
     opacity: 0;
     -webkit-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);
@@ -295,6 +294,7 @@ p {
   font-size: 1.5rem;
   font-weight: 800;
   padding: 30px 0;
+  z-index: 10;
 }
 @media (max-width: 992px) {
   .container .navigation {
@@ -315,8 +315,9 @@ p {
 .container .navigation nav {
   width: 80%;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
+  justify-content: flex-start;
+  justify-content: flex-end;
 }
 @media (max-width: 992px) {
   .container .navigation nav {
@@ -332,10 +333,11 @@ p {
 }
 @media (max-width: 992px) {
   .container .navigation nav a {
-    border: 1px solid #403f4c;
+    border: 2px solid #403f4c;
     width: 80%;
     margin: 10px;
-    padding: 10px 20px;
+    padding: 20px;
+    font-size: 2.5rem;
   }
 }
 @media (max-width: 992px) {
@@ -352,6 +354,8 @@ p {
 }
 .container .navigation nav.open {
   display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
 }
 .container .navigation .download {
   background-color: #f85565;
@@ -363,6 +367,7 @@ p {
 @media (max-width: 992px) {
   .container .navigation .download {
     border-radius: 0px;
+    padding: 20px;
   }
 }
 .container .navigation #menu {
@@ -555,8 +560,9 @@ p {
 }
 .home .stats {
   display: flex;
-  flex-direction: row;
+  align-items: stretch;
   justify-content: space-evenly;
+  flex-direction: row;
   margin-top: 50px;
 }
 @media (max-width: 992px) {
@@ -593,14 +599,14 @@ p {
 .about .content-33 img {
   width: 100%;
 }
-@media (max-width: 992px) {
-  .about .content-33 {
-    width: 50%;
-  }
-}
-@media only screen and (max-width: 425px) {
+@media (max-width: 425px) {
   .about .content-33 {
     width: 100%;
+  }
+}
+@media (max-width: 992px) {
+  .about .team .content-33 {
+    width: 50%;
   }
 }
 .about #img1 {

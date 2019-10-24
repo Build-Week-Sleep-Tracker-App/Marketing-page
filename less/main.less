@@ -30,7 +30,7 @@ h2 {
 h3 {
     font-size: 2rem;
     font-weight: 900;
-	margin: 20px 0 20px 0;
+    margin: 20px 0 20px 0;
 }
 
 p {
@@ -43,9 +43,7 @@ p {
 .summary {
     h2 {
         width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        .displayFlex(flex, center, center);
         white-space: pre-wrap;
 
         margin-bottom: 0;
@@ -53,13 +51,13 @@ p {
         img {
             height: 50px;
 
-            @media @phone {
+            @media @tablet {
                 display: block;
                 margin: 0 auto;
             }
         }
 
-        @media @phone {
+        @media @tablet {
             display: block;
         }
     }
@@ -77,7 +75,7 @@ p {
         margin-left: -70%;
         position: relative;
 
-        @media @phone {
+        @media @tablet {
             width: 100%;
             margin: 0;
             margin-bottom: 50px;
@@ -97,7 +95,7 @@ p {
         padding: 0;
         padding-right: 20px;
 
-        @media @phone {
+        @media @tablet {
             padding: 0;
         }
     }
@@ -110,7 +108,7 @@ p {
         margin-left: -50%;
         position: relative;
 
-        @media @phone {
+        @media @tablet {
             width: 100%;
             margin: 0;
         }
@@ -124,7 +122,7 @@ p {
     display: flex;
     flex-direction: column;
 
-    @media @phone {
+    @media @tablet {
         width: 100%;
     }
 
@@ -136,7 +134,7 @@ p {
 
         margin-bottom: 150px;
 
-        @media @phone {
+        @media @tablet {
             margin-bottom: 50px;
         }
     }
@@ -150,7 +148,9 @@ p {
         font-weight: 800;
         padding: 30px 0;
 
-        @media @phone {
+        z-index: 10;
+
+        @media @tablet {
             margin-bottom: 10px;
         }
 
@@ -161,7 +161,7 @@ p {
                 height: 70px;
             }
 
-            @media @phone {
+            @media @tablet {
                 z-index: 2;
             }
         }
@@ -169,11 +169,10 @@ p {
         nav {
             width: 80%;
 
-            display: flex;
+            .displayFlex(flex, center);
             justify-content: flex-end;
-            align-items: center;
 
-            @media @phone {
+            @media @tablet {
                 flex-direction: column;
                 .phone100();
             }
@@ -183,15 +182,17 @@ p {
                 color: @gray;
                 text-decoration: none;
 
-                @media @phone {
-                    border: 1px solid @gray;
+                @media @tablet {
+                    border: 2px solid @gray;
                     width: 80%;
                     margin: 10px;
-                    padding: 10px 20px;
+                    padding: 20px;
+
+                    font-size: 2.5rem;
                 }
             }
 
-            @media @phone {
+            @media @tablet {
                 display: none;
 
                 position: fixed;
@@ -205,7 +206,7 @@ p {
             }
 
             &.open {
-                display: flex;
+                .displayFlex(flex);
             }
         }
 
@@ -216,8 +217,9 @@ p {
             padding: 10px 20px;
             border-radius: 20px;
 
-            @media @phone {
+            @media @tablet {
                 border-radius: 0px;
+                padding: 20px;
             }
         }
 
@@ -227,7 +229,7 @@ p {
             height: 70px;
             z-index: 2;
 
-            @media @phone {
+            @media @tablet {
                 display: block;
                 right: 20px;
             }
@@ -237,7 +239,7 @@ p {
     .content-100 {
         width: 100%;
 
-        @media @phone {
+        @media @tablet {
             .phone100();
         }
     }
@@ -245,7 +247,7 @@ p {
     .content-50 {
         width: 50%;
 
-        @media @phone {
+        @media @tablet {
             .phone100();
             margin-bottom: 30px;
         }
@@ -254,7 +256,7 @@ p {
     .content-33 {
         width: calc(100% / 3);
 
-        @media @phone {
+        @media @tablet {
             .phone100();
         }
     }
@@ -265,7 +267,7 @@ p {
         display: flex;
         flex-wrap: wrap;
 
-        @media @phone {
+        @media @tablet {
             .phone100();
         }
     }
@@ -279,7 +281,7 @@ p {
         height: 70px;
         margin-bottom: 50px;
 
-        @media @phone {
+        @media @tablet {
             margin-bottom: 30px;
         }
     }
@@ -295,7 +297,7 @@ p {
         text-transform: uppercase;
         color: white;
 
-        @media @phone {
+        @media @tablet {
             padding-top: 20px;
             padding-bottom: 0px;
         }
@@ -313,13 +315,13 @@ p {
     .content-66 {
         justify-content: space-between;
 
-        @media @phone {
+        @media @tablet {
             flex-wrap: wrap;
             flex-direction: row;
         }
 
         div {
-            @media @phone {
+            @media @tablet {
                 width: 50%;
                 text-align: left;
             }
@@ -327,7 +329,7 @@ p {
     }
 
     .content-33 {
-        @media @phone {
+        @media @tablet {
             text-align: left;
         }
     }
@@ -345,7 +347,7 @@ p {
 
         height: 100%;
 
-        @media @phone {
+        @media @tablet {
             margin-top: -100%;
         }
     }
