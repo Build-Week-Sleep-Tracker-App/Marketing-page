@@ -1,0 +1,27 @@
+{
+  "name": "marketing-page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Build-Week-Sleep-Tracker-App/Marketing-page.git"
+  },
+  "author": "Rodrigo Graça",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Build-Week-Sleep-Tracker-App/Marketing-page/issues"
+  },
+  "homepage": "https://github.com/Build-Week-Sleep-Tracker-App/Marketing-page#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-terser": "^1.2.0",
+    "run-sequence": "^2.2.1"
+  }
+}
