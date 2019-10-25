@@ -62,5 +62,5 @@ gulp.task('minify-js', function () {
 				toplevel: true,
 			}
 		}))
-		.pipe(gulp.dest('./dist/js/'));
+		.pipe(gulp.dest('./dist/'));
 });
